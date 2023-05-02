@@ -46,7 +46,7 @@ namespace DynamicDialogueManager.Core
     [CreateAssetMenu(fileName = "NPCMetadata", menuName = "Modular Dialogue System", order = 1)]
     public class NPCMetadata : ScriptableObject
     {
-        public string name;
+        public string characterName;
         public Sprite avatar;
     }
 }
