@@ -12,7 +12,6 @@ namespace DynamicDialogueManager.Core
         private DialogueUI _dialogueUI;
 
         public List<NPCMetadata> NPCMetaDatabase = new List<NPCMetadata>();
-        public List<StyleSheet> UIStylesheets = new List<StyleSheet>();
 
         private void Start()
         {
