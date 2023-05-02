@@ -27,6 +27,14 @@ namespace DynamicDialogueManager.Core
             CreateDialogueBox();
         }
 
+        public void AddElements(VisualElement[] elements)
+        {
+            foreach (VisualElement element in elements)
+            {
+                dialogueRoot.Add(element);
+            }
+        }
+
         public async void StartDialogue(Action dialogueEndCallback = null)
         {
             VisualElement dialogueOptions = dialogueElements["dialogueOptions"] as VisualElement;

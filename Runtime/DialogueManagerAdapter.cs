@@ -21,6 +21,13 @@ namespace DynamicDialogueManager.Core
         public List<NPCMetadata> NPCMetaDatabase = new List<NPCMetadata>();
         public string dialogueResourcePath;
         public StyleSheet rootStyleSheet;
+        public List<StyleSheet> customStylesheets = new List<StyleSheet>();
+
+
+        public void AddElements(VisualElement[] elements)
+        {
+            _dialogueUI.AddElements(elements);
+        }
 
         private void Start()
         {
@@ -63,19 +70,6 @@ namespace DynamicDialogueManager.Core
             }
         }
 
-        public void Continue(int branchIndex)
-        {
-            if (currentTree.stages[0].branches.Count > branchIndex)
-            {
-                currentTree = currentTree.stages[0].branches[branchIndex].nextStage;
-                _dialogueUI.StartDialogue();
-            }
-            else
-            {
-                Debug.LogError("Branch with index " + branchIndex + " not found");
-            }
-        }
-
         public NPCMetadata GetNPCMeta(int id)
         {
             if (_npcMetaDatabase.TryGetValue(id, out NPCMetadata npc))
@@ -105,6 +99,11 @@ namespace DynamicDialogueManager.Core
             if (rootStyleSheet != null)
             {
                 _uiDocument.rootVisualElement.styleSheets.Add(rootStyleSheet);
+            }
+
+            foreach (StyleSheet sheet in customStylesheets)
+            {
+                _uiDocument.rootVisualElement.styleSheets.Add(sheet);
             }
         }
 
