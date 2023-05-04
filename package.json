@@ -1,6 +1,6 @@
 {
-    "name": "com.ntd.modular-dialogue",
-    "version": "1.0.0",
+    "name": "com.modular-dialogue",
+    "version": "1.1.0",
     "displayName": "Modular Dialogue System",
     "description": "A modular dialogue system for Unity",
     "unity": "2021.3",
